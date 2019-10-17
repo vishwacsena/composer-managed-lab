@@ -10,6 +10,8 @@ The main feature of this bot is reporting on the current weather conditions.
 
 To do this, we'll create a dialog that calls an external API to retrieve the weather data for a specific zipcode. To get the zipcode, the bot will prompt the user.
 
+First, we'll set up all the components and make sure they work together. Then, we'll flesh out the functionality.
+
 ## Create a new dialog
 
 1. Click the `+ New Dialog` button in the left hand explorer. A dialog will appear and ask for a `name` and `description`
