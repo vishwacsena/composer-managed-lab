@@ -129,6 +129,13 @@ dialog.api_response.statusCode == 200
     I got an error: { dialog.api_response.content.message }
     ```
 
+18. To be safe, let's clean up the invalid value which otherwise would persist. Use the "+", select `Memory Manipulation >`, then select `Delete a property`
+
+    Set the property to:
+    ```
+    user.zipcode
+    ```
+
 ## Test in Emulator
 
 18. Restart the bot again, and open it in emulator.
@@ -139,7 +146,7 @@ dialog.api_response.statusCode == 200
 
 The bot will prompt you for a zipcode. Give it your home zipcode, and seconds later, you should see the current weather conditions!
 
-![restart bot](assets/03/basic-weather.gif)
+![weather bot in action](assets/03/basic-weather.gif)
 
-
+If you ask for the weather again, notice that the bot doesn't prompt for a zipcode the second time. Remember, this is because `user.zipcode` is already set. Had we checked `always prompt,` the bot would ask each time.  Try it out!
 
