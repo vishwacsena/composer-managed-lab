@@ -46,3 +46,14 @@ This workshop is structured to start simple and quickly layer in sophisticated c
 - Handling interruptions in the conversation flow
 - Author more than one dialog that help your bot fulfill more than one scenario 
 ​
+## Concepts
+
+- Dialogs
+    - events
+
+- Memory
+    - scopes
+
+- Language Understanding
+
+- Language Generation
