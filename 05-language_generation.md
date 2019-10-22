@@ -8,7 +8,12 @@ Let's start by adding some variation to the welcome message.
 
 1. In Composer, click on `weatherBot.Main`, then make sure to highlight the `WelcomeTheUser` trigger.
 
+![empty prompt in flow](assets/05/nav1.png)
+
+
 2. Select the `Send an Activity` node in the flow.
+
+![empty prompt in flow](assets/05/lg-1.png)
 
 3. In the right hand property editor, replace the text with the following:
 ```
@@ -35,9 +40,14 @@ Let's make improve the language used when delivering the weather conditions. To 
 
 5. Navigate to the `Bot Says` tab by clicking the bot icon on the far left of the screen.
 
+![empty prompt in flow](assets/05/botsays.png)
+
 6. Toggle the `Edit Mode` switch in the upper right hand corner so that it turns blue.  This will enable a syntax-highlighted LG editor in the main pane.
 
       > You'll notice that every message you created in the flow editor also appears here. They're linked, and any changes you make in this view will be reflected in the flow as well.
+
+![empty prompt in flow](assets/05/editmode.png)
+
 
 7. Scroll to the bottom of the editor.
 
@@ -85,6 +95,9 @@ description of the weather based on the raw data from the API.
 
 11. In Composer's explorer, click on the `getWeather` dialog, and make sure the `BeginDialog` trigger is highlighted.
 
+![empty prompt in flow](assets/05/nav2.png)
+
+
 12. Scroll to the bottom, and click on the `Send an activity` node that starts with `The weather is...`
 
 13. In the right hand property pane, replace the activity text with the following:
@@ -94,6 +107,8 @@ description of the weather based on the raw data from the API.
 
 > Here, we are using the `DescribeWeather` template _inside another template_. LG templates can be combined in this way to create more complex templates.
 
+![empty prompt in flow](assets/05/lg-2.png)
+
 14. Click `Reload bot` and open it in the emulator.
 
 ---
@@ -101,3 +116,5 @@ description of the weather based on the raw data from the API.
 Now, when you say `weather`, the bot will send you a message that sounds much more human than it did before!
 
 It's possible to combine these techniques to quickly create lots of variety in your messages!
+
+![empty prompt in flow](assets/05/nice-weather.png)

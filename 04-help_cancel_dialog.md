@@ -9,6 +9,8 @@ With even a simple bot, it is a good practice to provide a help command. You'll 
 help
 ```
 
+![empty prompt in flow](assets/04/help-dialog.png)
+
 3. Click submit, and you'll land in the editor view for the new help dialog. Composer automatically created a `BeginDialog` trigger, so click on that to edit the flow.
 
 4. Use the `+` button at the bottom of the flow, choose `Send Messages >`, then choose `Send an Activity`
@@ -17,6 +19,9 @@ help
 ```
 I am a weather bot! I can tell you the current weather conditions. Just say WEATHER.
 ```
+
+![empty prompt in flow](assets/04/help.png)
+
 
 6. In the left hand explorer, click on `weatherBot.Main` at the top of the list.
 
@@ -32,15 +37,24 @@ I am a weather bot! I can tell you the current weather conditions. Just say WEAT
     help
     ```
 
+![empty prompt in flow](assets/04/help-intent.png)
+
 9. In the left hand explorer, click `+ New Trigger'
 
 10. In the resulting dialog box, select `Handle an Intent`, then choose the new `help` intent. Submit the dialog.
+
+![empty prompt in flow](assets/04/new-trigger.png)
 
 11. In the flow editor, click the `+` button at the bottom of the empty flow.
 
 12. Choose `Dialogs >` and then select `Begin a dialog`
 
+![empty prompt in flow](assets/04/help-trigger-flow.png)
+
 13. In the right hand property editor, select the `help` dialog.
+
+![empty prompt in flow](assets/04/help-props.png)
+
 
 14. Click `Reload bot` and open it in the emulator.
 
@@ -48,7 +62,10 @@ I am a weather bot! I can tell you the current weather conditions. Just say WEAT
 
 Now, in addition to giving you the current weather, your bot can also offer help.
 
+![empty prompt in flow](assets/04/basic-help.gif)
+
 However, notice that once you start the weather dialog by saying weather, your bot doesn't know how to provide help. Let's fix this!
+
 
 ---
 
@@ -58,7 +75,11 @@ However, notice that once you start the weather dialog by saying weather, your b
 
 17. In the right hand property editor, set `Allow Interruptions` to `true`
 
+![empty prompt in flow](assets/04/interupts.png)
+
       > This tells Bot Framework to consult the parent dialog's recognizer, which will allow the bot to respond to `help` at the prompt as well.
+
+
 
 18. Hit `Reload Bot` and open it in the emulator.
 
@@ -67,6 +88,9 @@ However, notice that once you start the weather dialog by saying weather, your b
 Say `weather` to your bot.  It will ask for a zipcode.
 
 Now say `help`. It'll provide the global help response, even though that intent and trigger are defined in another dialog. Interruptions are a powerful way to make complex bots - we'll come back to that later.
+
+![empty prompt in flow](assets/04/better-help.gif)
+
 
 For now, let's add one more global function - a cancel command.
 
@@ -92,6 +116,9 @@ Canceling!
 
 > When triggered, this will cause the bot to cancel any active dialogs, and send the user back to the main prompt.
 
+![empty prompt in flow](assets/04/cancel-flow.png)
+
+
 25. In the left hand explorer, click on `weatherBot.Main` at the top of the list.
 
 26. In the right hand property pane, find the "Language Understanding" section and click the "Add" button at the bottom. This will reveal 2 new fields, allowing you to define a new intent.
@@ -115,6 +142,9 @@ Canceling!
 12. Choose `Dialogs >` and then select `Begin a dialog`
 
 13. In the right hand property editor, select the `cancel` dialog.
+
+![empty prompt in flow](assets/04/cancel-trigger.png)
+
 
 14. Click `Reload bot` and open it in the emulator.
 
