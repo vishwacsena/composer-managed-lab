@@ -82,23 +82,32 @@ The http request action is found under the `Integrations >` menu in the flow "+"
 
 11. Add an `Http Request` step to your flow.
 
-12. In the properties, editor,
+![enter prompt text](assets/03/http-step.png)
+
+
+12. In the properties editor,
 
       Set the method to `GET`
 
       Set the url to:    
-        ```
-        http://weatherbot-ignite-2019.azurewebsites.net/api/getWeather?zipcode={user.zipcode}
-        ```
+      ```
+      http://weatherbot-ignite-2019.azurewebsites.net/api/getWeather?zipcode={user.zipcode}
+      ```
 
       Set the property to:
       ```
       dialog.api_response
       ```
 
-13. Add an `IF/ELSE`
+![enter prompt text](assets/03/http-props.png)
 
-14. Set the condition to:
+This will cause the bot to make an HTTP request to the url specified. The reference to `{user.zipcode}` will be replaced by a live value from the bot's memory.
+
+After making an HTTP request, we need to test the status of the response. To do this, we'll use an If/Else branch.
+
+13. Use the '+' button, then choose `Flow`, then choose  `Branch: If/Else`
+
+14. In the property editor on the right, set the `condition` field to:
 ```
 dialog.api_response.statusCode == 200
 ```
@@ -122,6 +131,8 @@ dialog.api_response.statusCode == 200
     The weather is {dialog.weather.weather} and the temp is {dialog.weather.temp}&deg;
     ```
 
+![enter prompt text](assets/03/ifelse.png)
+
 17. Now, in the `false` branch, use the "+" button, then select `Send Messages >`, then `Send an activity`
 
     Set the text of the message to:
@@ -135,6 +146,8 @@ dialog.api_response.statusCode == 200
     ```
     user.zipcode
     ```
+
+![enter prompt text](assets/03/ifelse2.png)
 
 ## Test in Emulator
 
