@@ -1,0 +1,56 @@
+
+
+# bfdactivity-897539
+-Hi! I'm a friendly bot that can help with the weather. Try saying WEATHER.
+-Hello! I am Weather Bot! Say WEATHER to get the current conditions.
+-Howdy! Weather bot is my name and weather is my game.
+
+# bfdactivity-011069
+- Canceling!
+
+# bfdactivity-193938
+- I can help with the weather. Say WEATHER for current conditions.
+
+# bfdactivity-381379
+- Let's check the weather.
+
+# bfdprompt-145022
+- What is your zipcode?
+
+# bfdactivity-668134
+- I got an error: { dialog.api_response.message}
+
+# bfdactivity-540356
+- {DescribeWeather(dialog.weather)} and it is {dialog.weather.temp}&deg;
+
+# DescribeWeather(weather)
+- IF: {weather.weather=="Clouds"}
+    - It is cloudy
+- ELSEIF: {weather.weather=="Thunderstorm"}
+    - There's a thunderstorm
+- ELSEIF: {weather.weather=="Drizzle"}
+    - It is drizzling
+- ELSEIF: {weather.weather=="Rain"}
+    - It is raining
+- ELSEIF: {weather.weather=="Snow"}
+    - There's snow
+- ELSEIF: {weather.weather=="Clear"}
+    - The skies are clear
+- ELSEIF: {weather.weather=="Mist"}
+    - There's a mist in the air
+- ELSEIF: {weather.weather=="Smoke"}
+    - There's smoke in the air
+- ELSEIF: {weather.weather=="Haze"}
+    - There's a haze
+- ELSEIF: {weather.weather=="Dust"}
+    - There's a dust in the air
+- ELSEIF: {weather.weather=="Fog"}
+    - It's foggy
+- ELSEIF: {weather.weather=="Ash"}
+    - There's ash in the air
+- ELSEIF: {weather.weather=="Squall"}
+    - There's a squall
+- ELSEIF: {weather.weather=="Tornado"}
+    - There's a tornado happening
+- ELSE:
+    - {weather.weather}

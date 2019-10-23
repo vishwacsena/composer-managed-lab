@@ -1,0 +1,108 @@
+{
+  "$type": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "description": "A friendly bot who can talk about the weather",
+    "name": "weatherBot"
+  },
+  "autoEndDialog": "true",
+  "defaultResultProperty": "dialog.result",
+  "recognizer": {
+    "$type": "Microsoft.RegexRecognizer",
+    "intents": [
+      {
+        "intent": "weather",
+        "pattern": "weather"
+      },
+      {
+        "intent": "help",
+        "pattern": "help"
+      },
+      {
+        "intent": "cancel",
+        "pattern": "cancel"
+      }
+    ]
+  },
+  "generator": "common.lg",
+  "events": [
+    {
+      "$type": "Microsoft.OnConversationUpdateActivity",
+      "$designer": {
+        "id": "107377",
+        "name": "WelcomeTheUser"
+      },
+      "constraint": "toLower(turn.Activity.membersAdded[0].name) != 'bot'",
+      "actions": [
+        {
+          "$type": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "897539",
+            "name": "Send an Activity"
+          },
+          "activity": "[bfdactivity-897539]"
+        }
+      ]
+    },
+    {
+      "$type": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "297310"
+      },
+      "intent": "weather",
+      "actions": [
+        {
+          "$type": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "074212",
+            "name": "Begin a Dialog"
+          },
+          "dialog": "getWeather"
+        }
+      ]
+    },
+    {
+      "$type": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "100801"
+      },
+      "intent": "help",
+      "actions": [
+        {
+          "$type": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "346608",
+            "name": "Begin a Dialog"
+          },
+          "dialog": "help"
+        }
+      ]
+    },
+    {
+      "$type": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "472393"
+      },
+      "intent": "cancel",
+      "actions": [
+        {
+          "$type": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "613323",
+            "name": "Begin a Dialog"
+          },
+          "dialog": "cancel"
+        }
+      ]
+    }
+  ],
+  "$schema": "../../app.schema",
+  "rules": [
+    {
+      "$type": "Microsoft.OnConversationUpdateActivity",
+      "$designer": {
+        "id": "376720"
+      },
+      "constraint": "toLower(turn.Activity.membersAdded[0].name) != 'bot'"
+    }
+  ]
+}
