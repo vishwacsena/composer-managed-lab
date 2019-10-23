@@ -1,0 +1,44 @@
+{
+  "$type": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "name": "cancel",
+    "description": "global cancel",
+    "id": "884815"
+  },
+  "events": [
+    {
+      "$type": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog"
+      }
+    }
+  ],
+  "autoEndDialog": "true",
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$type": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "id": "266085",
+        "name": "BeginDialog"
+      },
+      "actions": [
+        {
+          "$type": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "266237",
+            "name": "Send an Activity"
+          },
+          "activity": "[bfdactivity-266237]"
+        },
+        {
+          "$type": "Microsoft.CancelAllDialogs",
+          "$designer": {
+            "id": "806834",
+            "name": "Cancel All Dialogs"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -18,7 +18,7 @@ Bot Framework Composer is an integrated development tool for developers and mult
 - Integration with Language generation system​
 - A ready-to-use bot runtime executable​
 
-<img src="./assets/00/overview.png" width = "800" />
+<img src="./assets/00/overview.png" style="background-color:white" width = "800" />
 
 ​Bot Framework Composer is: 
 
@@ -27,7 +27,7 @@ Bot Framework Composer is an integrated development tool for developers and mult
 - A web app designed to run locally and in cloud-environments ​
 - Designed as an extensible solution both at dialog composition (actions/ skills) and composer tools and workflows​
 
-<img src="./assets/00/overview2.png" width = "800" />
+<img src="./assets/00/overview2.png" style="background-color:white" width = "800" />
 
 ## Workshop outline
 
@@ -36,7 +36,7 @@ This workshop is structured to start simple and quickly layer in sophisticated c
 
 - Create a new Bot
 - Author a new dialog
-    - Triggers - Language Understanding (powered by LUIS.ai)
+    - Triggers - Language Understanding (powered by [LUIS.ai][1])
     - Actions
 - Using different actions to model conversation flow
     - HTTP Action
@@ -46,14 +46,13 @@ This workshop is structured to start simple and quickly layer in sophisticated c
 - Handling interruptions in the conversation flow
 - Author more than one dialog that help your bot fulfill more than one scenario 
 ​
-## Concepts
+## Building blocks
 
-- Dialogs
-    - events
+We will cover the following building blocks as we create a `Weather bot` using Bot Framework Composer.
 
-- Memory
-    - scopes
 
-- Language Understanding
+<img src="./assets/00/composer-building-blocks.png" style="background-color:white" width = "800" />
 
-- Language Generation
+
+
+[1]:https://www.luis.ai/

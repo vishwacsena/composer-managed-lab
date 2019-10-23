@@ -9,25 +9,51 @@ With even a simple bot, it is a good practice to provide a help command. You'll 
 help
 ```
 
-![empty prompt in flow](assets/04/help-dialog.png)
+<center>
+<img src="./assets/04/help-dialog.png" style="background-color:white" width = "300" />
+</center>
 
-3. Click submit, and you'll land in the editor view for the new help dialog. Composer automatically created a `BeginDialog` trigger, so click on that to edit the flow.
 
-4. Use the `+` button at the bottom of the flow, choose `Send Messages >`, then choose `Send an Activity`
+3. Click submit, and you'll land in the editor view for the new help dialog. 
 
-5. In the property editor on the right side, set the text of the activity to:
+<a name="create-begin-dialog-trigger"></a>
+
+Composer created this new dialog with no triggers or actions defined. So let's go ahead and add a trigger for actions to execute when this dialog begins. 
+
+4. Click on `+ New Trigger` in the left navigation pane. 
+
+5. Select `Handle a Dialog Event` for `What is the type of this trigger?` and select `Handle and event: BeginDialog` for `What is the event?`. Click `Submit` 
+
+> `BeginDialog` event is automatically fired by adaptive dialog when this dialog is invoked.
+
+<center>
+<img src="./assets/02/begin-dialog-trigger.png" style="background-color:white" width = "300" />
+</center>
+
+6. Let's give this trigger a shorter name - type `BeginDialog` in the right property editor. 
+
+<center>
+<img src="./assets/02/begindialog-trigger.png" style="background-color:white" width = "300" />
+</center>
+
+7. Use the `+` button at the bottom of the flow, choose `Send Messages >`, then choose `Send an Activity`
+
+8. In the property editor on the right side, set the text of the activity to:
 ```
 I am a weather bot! I can tell you the current weather conditions. Just say WEATHER.
 ```
 
-![empty prompt in flow](assets/04/help.png)
+<center>
+<img src="./assets/04/help.png" style="background-color:white" width = "300" />
+</center>
 
+Next, let's wire this new dialog up to the Main dialog (your bot's brain).
 
-6. In the left hand explorer, click on `weatherBot.Main` at the top of the list.
+9. In the left hand explorer, click on `weatherBot.Main` at the top of the list.
 
-7. In the right hand property pane, find the "Language Understanding" section and click the "Add" button at the bottom. This will reveal 2 new fields, allowing you to define a new intent.
+10. In the right hand property pane, find the "Language Understanding" section and click the "Add" button at the bottom. This will reveal 2 new fields, allowing you to define a new intent.
 
-8. Set the `Intent` field to:
+11. Set the `Intent` field to:
     ```
     help
     ```
@@ -37,51 +63,66 @@ I am a weather bot! I can tell you the current weather conditions. Just say WEAT
     help
     ```
 
-![empty prompt in flow](assets/04/help-intent.png)
 
-9. In the left hand explorer, click `+ New Trigger'
+<center>
+<img src="./assets/04/help-intent.png" style="background-color:white" width = "400" />
+</center>
 
-10. In the resulting dialog box, select `Handle an Intent`, then choose the new `help` intent. Submit the dialog.
+12. In the left hand explorer, click `+ New Trigger'
 
-![empty prompt in flow](assets/04/new-trigger.png)
+13. In the resulting dialog box, select `Handle an Intent`, then choose the new `help` intent. Submit the dialog.
 
-11. In the flow editor, click the `+` button at the bottom of the empty flow.
+<center>
+<img src="./assets/04/new-trigger.png" style="background-color:white" width = "400" />
+</center>
 
-12. Choose `Dialogs >` and then select `Begin a dialog`
+14. In the flow editor, click the `+` button at the bottom of the empty flow.
 
-![empty prompt in flow](assets/04/help-trigger-flow.png)
+15. Choose `Dialogs >` and then select `Begin a dialog`
 
-13. In the right hand property editor, select the `help` dialog.
+<center>
+<img src="./assets/04/help-trigger-flow.png" style="background-color:white" width = "400" />
+</center>
 
-![empty prompt in flow](assets/04/help-props.png)
+16. In the right hand property editor, select the `help` dialog.
+
+<center>
+<img src="./assets/04/help-props.png" style="background-color:white" width = "400" />
+</center>
 
 
-14. Click `Reload bot` and open it in the emulator.
+17. Click `Reload bot` and open it in the emulator.
 
 ----
 
 Now, in addition to giving you the current weather, your bot can also offer help.
 
-![empty prompt in flow](assets/04/basic-help.gif)
+<center>
+<img src="./assets/04/basic-help.gif" style="background-color:white" width = "400" />
+</center>
 
 However, notice that once you start the weather dialog by saying weather, your bot doesn't know how to provide help. Let's fix this!
 
 
 ---
 
-15. In Composer's left hand explorer, navigate back to the `getWeather` dialog. Make sure to highlight the `BeginDialog` trigger.
+## Allowing interruptions
 
-16. Select the `Bot Asks` node in the flow that says `What is your zipcode?`
+18. In Composer's left hand explorer, navigate back to the `getWeather` dialog. Make sure to highlight the `BeginDialog` trigger.
 
-17. In the right hand property editor, set `Allow Interruptions` to `true`
+19. Select the `Bot Asks` node in the flow that says `What is your zipcode?`
 
-![empty prompt in flow](assets/04/interupts.png)
+20. In the right hand property editor, set `Allow Interruptions` to `true`
+
+<center>
+<img src="./assets/04/interrupts.png" style="background-color:white" width = "400" />
+</center>
 
       > This tells Bot Framework to consult the parent dialog's recognizer, which will allow the bot to respond to `help` at the prompt as well.
 
 
 
-18. Hit `Reload Bot` and open it in the emulator.
+21. Hit `Reload Bot` and open it in the emulator.
 
 ---
 
@@ -89,41 +130,50 @@ Say `weather` to your bot.  It will ask for a zipcode.
 
 Now say `help`. It'll provide the global help response, even though that intent and trigger are defined in another dialog. Interruptions are a powerful way to make complex bots - we'll come back to that later.
 
-![empty prompt in flow](assets/04/better-help.gif)
+<center>
+<img src="./assets/04/better-help.gif" style="background-color:white" width = "400" />
+</center>
 
 
 For now, let's add one more global function - a cancel command.
 
 ---
 
-19. In Composer's left hand explorer, click the `+ New Dialog` button again. 
+## Global cancel
 
-20. Give this new dialog the name:
+22. In Composer's left hand explorer, click the `+ New Dialog` button again. 
+
+23. Give this new dialog the name:
 ```
 cancel
 ```
 
-21. Click submit, and you'll land in the editor view for the new help dialog. Composer automatically created a `BeginDialog` trigger, so click on that to edit the flow.
 
-22. Use the `+` button at the bottom of the flow, choose `Send Messages >`, then choose `Send an Activity`
+> Do you remember how to add a `BeginDialog` trigger to this newly created dialog? 
 
-23. In the property editor on the right side, set the text of the activity to:
+You will need to add a `BeginDialog` trigger to this newly created dialog. See [here](#create-begin-dialog-trigger) to juggle your memory and add a `BeginDialog` trigger to this dialog and continue through the next set of steps.
+
+24. Use the `+` button at the bottom of the flow, choose `Send Messages >`, then choose `Send an Activity`
+
+25. In the property editor on the right side, set the text of the activity to:
 ```
 Canceling!
 ```
 
-24. Use the `+` button again, this time choose `Dialogs >`, then `Cancel all dialogs`
+26. Use the `+` button again, this time choose `Dialogs >`, then `Cancel all dialogs`
 
 > When triggered, this will cause the bot to cancel any active dialogs, and send the user back to the main prompt.
 
-![empty prompt in flow](assets/04/cancel-flow.png)
+<center>
+<img src="./assets/04/cancel-flow.png" style="background-color:white" width = "400" />
+</center>
 
 
-25. In the left hand explorer, click on `weatherBot.Main` at the top of the list.
+27. In the left hand explorer, click on `weatherBot.Main` at the top of the list.
 
-26. In the right hand property pane, find the "Language Understanding" section and click the "Add" button at the bottom. This will reveal 2 new fields, allowing you to define a new intent.
+28. In the right hand property pane, find the "Language Understanding" section and click the "Add" button at the bottom. This will reveal 2 new fields, allowing you to define a new intent.
 
-27. Set the `Intent` field to:
+29. Set the `Intent` field to:
     ```
     cancel
     ```
@@ -133,20 +183,21 @@ Canceling!
     cancel
     ```
 
-9. In the left hand explorer, click `+ New Trigger'
+30. In the left hand explorer, click `+ New Trigger'
 
-10. In the resulting dialog box, select `Handle an Intent`, then choose the new `cancel` intent. Submit the dialog.
+31. In the resulting dialog box, select `Handle an Intent`, then choose the new `cancel` intent. Submit the dialog.
 
-11. In the flow editor, click the `+` button at the bottom of the empty flow.
+32. In the flow editor, click the `+` button at the bottom of the empty flow.
 
-12. Choose `Dialogs >` and then select `Begin a dialog`
+33. Choose `Dialogs >` and then select `Begin a dialog`
 
-13. In the right hand property editor, select the `cancel` dialog.
+34. In the right hand property editor, select the `cancel` dialog.
 
-![empty prompt in flow](assets/04/cancel-trigger.png)
+<center>
+<img src="./assets/04/cancel-trigger.png" style="background-color:white" width = "500" />
+</center>
 
-
-14. Click `Reload bot` and open it in the emulator.
+35. Click `Reload bot` and open it in the emulator.
 
 ---
 
@@ -155,3 +206,11 @@ Say `weather` to your bot.  It will ask for a zipcode.
 Now say `help`. It'll provide the global help respons.
 
 Now, say `cancel` - notice, the bot doesn't resume the weather dialog. Instead, it confirms the cancelation, and waits for your next message.
+
+
+## Covered in this section
+- Adding additional dialogs
+- Global flow control operations
+    - Help
+    - Cancel
+- Allow interruptions while in the middle of a conversation

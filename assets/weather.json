@@ -1,0 +1,12 @@
+{ 
+    “id”: "800", 
+    “main”: “Clear”, 
+    “description”: “clear sky”, 
+    “icon”: “http://openweathermap.org/img/wn/01d@2x.png”, 
+    “weather”: “Clear”, 
+    “temp”: 53, 
+    “high”: 57, 
+    “low”: 51, 
+    “rain”: true, 
+    “city”: “Redmond” 
+}

@@ -1,0 +1,98 @@
+{
+  "$type": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "name": "WeatherBotVishwac"
+  },
+  "autoEndDialog": "true",
+  "defaultResultProperty": "dialog.result",
+  "recognizer": {
+    "$type": "Microsoft.RegexRecognizer",
+    "intents": [
+      {
+        "intent": "weather",
+        "pattern": "weather"
+      },
+      {
+        "intent": "help",
+        "pattern": "help"
+      },
+      {
+        "intent": "cancel",
+        "pattern": "cancel"
+      }
+    ]
+  },
+  "triggers": [
+    {
+      "$type": "Microsoft.OnConversationUpdateActivity",
+      "$designer": {
+        "id": "376720",
+        "name": "WelcomeTheUser"
+      },
+      "condition": "toLower(turn.Activity.membersAdded[0].name) != 'bot'",
+      "actions": [
+        {
+          "$type": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "169207",
+            "name": "Send an Activity"
+          },
+          "activity": "[bfdactivity-169207]"
+        }
+      ]
+    },
+    {
+      "$type": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "858740"
+      },
+      "intent": "weather",
+      "actions": [
+        {
+          "$type": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "875958",
+            "name": "Begin a Dialog"
+          },
+          "dialog": "getWeather1"
+        }
+      ]
+    },
+    {
+      "$type": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "499733"
+      },
+      "intent": "help",
+      "actions": [
+        {
+          "$type": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "557438",
+            "name": "Begin a Dialog"
+          },
+          "dialog": "help"
+        }
+      ]
+    },
+    {
+      "$type": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "360842"
+      },
+      "intent": "cancel",
+      "actions": [
+        {
+          "$type": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "973138",
+            "name": "Begin a Dialog"
+          },
+          "dialog": "cancel"
+        }
+      ]
+    }
+  ],
+  "$schema": "../../app.schema",
+  "generator": "common.lg"
+}

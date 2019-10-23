@@ -1,0 +1,18 @@
+{
+  "ComposerDialogs/Main/Main.lu": {
+    "lastUpdateTime": 1,
+    "lastPublishTime": 0
+  },
+  "ComposerDialogs/getWeather1/getWeather1.lu": {
+    "lastUpdateTime": 1571863489006,
+    "lastPublishTime": 0
+  },
+  "ComposerDialogs/help/help.lu": {
+    "lastUpdateTime": 1571866207231,
+    "lastPublishTime": 0
+  },
+  "ComposerDialogs/cancel/cancel.lu": {
+    "lastUpdateTime": 1571866807885,
+    "lastPublishTime": 0
+  }
+}

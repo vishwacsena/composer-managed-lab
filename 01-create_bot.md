@@ -11,7 +11,7 @@ You'll be presented with a dialog with options to either create an empty bot pro
 
     For this workshop, make sure `Create from Scratch` selected and click `Next`
 
-![create bot modal](assets/01/create-1.png)
+<img src="./assets/01/create-1.png" style="background-color:white" width = "800" />
 
 2. The second screen asks for a `Name` and `Description` of your bot.
 
@@ -29,7 +29,7 @@ You'll be presented with a dialog with options to either create an empty bot pro
 
       > Leave the `Location` field with its default value - this will put the bot project into Composer's default project folder where it will be easy to find.  
 
-![create bot modal](assets/01/create-2.png)
+<img src="./assets/01/create-2.png" style="background-color:white" width = "800" />
 
 3. Click `Next`, and Composer will create the project for you!
 
@@ -38,21 +38,23 @@ You'll be presented with a dialog with options to either create an empty bot pro
 
 After creating your bot, Composer will load the new bot's `Main` dialog in the editor.  It should look like this:
 
-![empty main dialog](assets/01/empty-main-dialog.png)
+<img src="./assets/01/empty-main-dialog.png" style="background-color:white" width = "800" />
 
 Each dialog contains one or more `Triggers` that define the actions available to the bot while the dialog is active. Right now the dialog is empty, so the bot won't do anything.
 
-Let's add a trigger so that the bot will send a greeting message to users when they connect. 
+As a refresher, here are the constituent parts of a dialog - 
 
-1. Click the `+ New Trigger` button in the left hand explorer.
+<img src="./assets/01/adaptive-dialog-anatomy.png" style="background-color:white" width = "800" />
 
-    You'll see dialog box with a list of trigger types. To trigger a greeting, select `Handle ConversationUpdate`.  This type of trigger occurs when a user first opens a chat window and connects to the bot.
+You will notice that the new bot is pre-configured with one trigger in the left dialogs window - `Handle ConversationUpdate`. 
 
-![trigger modal](assets/01/create-welcome-trigger.png)
+> Triggers help your dialog capture events of interest and respond to them using actions.
 
-2. Submit the dialog box, and you'll see a new `flow` has been added to the dialog. 
+1. Click the `Handle ConversationUpdate` trigger in the left hand explorer.
 
-![a new flow added to the dialog](assets/01/new-flow.png)
+2. You will see a new `flow` has been added to the dialog. 
+
+<img src="./assets/01/new-flow.png" style="background-color:white" width = "800" />
 
 3. To help keep the bot organized, let's rename this trigger to something that describes what it does.
 
@@ -63,18 +65,20 @@ Let's add a trigger so that the bot will send a greeting message to users when t
       WelcomeTheUser
       ````
 
-![rename the trigger](assets/01/rename-trigger.gif)
+<img src="./assets/01/rename-trigger.gif" style="background-color:white" width = "800" />
 
 Now, let's actually make the bot do something! 
 Inside the flow, you'll see that the teal `Trigger` box has a line below it that includes in a "+" button.
 
-The "+" button can be used to add an action at the given point in the dialog flow. You can use this to add actions to the end of a flow, or insert actions at an earlier point.
+The "+" button can be used to add `Actions` to the conversation flow. You can use this to add actions to the end of a flow, or insert actions at an earlier point.
 
 For now, let's instruct the bot to send a simple greeting.
 
 4. Click the "+" button and select the first menu item `Send Messages`, and then selec the first item from the sub-menu: `Send an Activity`
 
-![add a send activity action](assets/01/add-send-activity.gif)
+<center>
+<img src="./assets/01/add-send-activity.gif" style="background-color:white" width = "400" />
+</center>
 
 5. Select the new `Send an Activity` action in the flow and it's properties will appear on the right hand side of the screen.  This action has only one main property - the text of the activity to send.
 
@@ -86,7 +90,17 @@ For now, let's instruct the bot to send a simple greeting.
 
 Your bot should now look like this:
 
-![set text in send activity properties](assets/01/send-activity.png)
+<img src="./assets/01/send-activity.png" style="background-color:white" width = "800" />
+
+Next, let's temporarily disable the recognizer for the main dialog. We will get back to this in the next step.
+
+7. Click on `WeatherBot.Main` in the left pane to bring up the properties editor for the root dialog.
+
+6. In the property editor on the right hand side, click on `Recognizer type` and select `None`.
+
+<center>
+<img src="./assets/01/recognizer-none.png" style="background-color:white" width = "300" />
+</center>
 
 # Start your bot and test it
 
@@ -96,14 +110,26 @@ Now that our new bot has its first simple feature, let's launch it in the emulat
 
 8. After a few seconds, a second link will appear next to the button thats `Test bot in emulator`.  Click this link to open Emulator and connect.
 
-![start bot](assets/01/start-bot.gif)
+<center>
+<img src="./assets/01/start-bot.gif" style="background-color:white" width = "400" />
+</center>
 
 You should see a window like this appear:
 
-![set text in send activity properties](assets/01/emulator-launch.png)
+<img src="./assets/01/emulator-launch.png" style="background-color:white" width = "800" />
 
 And the bot should immediately greet you with the message we just configured:
 
-![set text in send activity properties](assets/01/greeting-in-emulator.png)
+<center>
+<img src="./assets/01/greeting-in-emulator.png" style="background-color:white" width = "300" />
+</center>
 
 We now have a working bot, and we're ready to add some more substantial functionality!
+
+## Covered in this section
+- Create a new bot project
+- Add a trigger to a dialog
+- Adding an action to a trigger
+- Using the dialog flow editor, property editors
+- Running the bot locally
+- Testing the bot using Bot Framework Emulator

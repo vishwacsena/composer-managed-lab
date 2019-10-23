@@ -1,0 +1,81 @@
+
+# bfdactivity-169207
+-Hi! I'm a friendly bot that can help with the weather. Try saying WEATHER.
+-Hello! I am Weather Bot! Say WEATHER to get the current conditions.
+-Howdy! Weather bot is my name and weather is my game.
+
+
+# bfdactivity-153145
+- Let's check the weather
+
+
+
+
+
+# bfdprompt-992072
+[Activity
+    Text = What is your zipcode?
+    SuggestedActions = Help | Cancel
+]
+
+
+# bfdunrecognizedPrompt-992072
+- Sorry, I do not understand '{this.value}'. Please specify a zipcode in the form 12345
+
+
+# bfdinvalidPrompt-992072
+- Sorry, '{this.value}' is not valid. I'm looking for a 5 digit number as zipcode. Please specify a zipcode in the form 12345
+
+
+# bfdactivity-241843
+[ThumbnailCard
+    title = Weather for @{dialog.weather.city}
+    text = The weather is {dialog.weather.weather} and @{dialog.weather.temp}&deg;
+    image = @{dialog.weather.icon}
+]
+
+
+# bfdactivity-153930
+- I got an error: {dialog.api_response.content.message}
+
+
+# bfdactivity-933779
+- I am a weather bot! I can tell you the current weather conditions. Just say WEATHER.
+
+
+# bfdactivity-266237
+- Canceling!
+
+# DescribeWeather(weather)
+- IF: {weather.weather=="Clouds"}
+    - It is cloudy
+- ELSEIF: {weather.weather=="Thunderstorm"}
+    - There's a thunderstorm
+- ELSEIF: {weather.weather=="Drizzle"}
+    - It is drizzling
+- ELSEIF: {weather.weather=="Rain"}
+    - It is raining
+- ELSEIF: {weather.weather=="Snow"}
+    - There's snow
+- ELSEIF: {weather.weather=="Clear"}
+    - The skies are clear
+- ELSEIF: {weather.weather=="Mist"}
+    - There's a mist in the air
+- ELSEIF: {weather.weather=="Smoke"}
+    - There's smoke in the air
+- ELSEIF: {weather.weather=="Haze"}
+    - There's a haze
+- ELSEIF: {weather.weather=="Dust"}
+    - There's a dust in the air
+- ELSEIF: {weather.weather=="Fog"}
+    - It's foggy
+- ELSEIF: {weather.weather=="Ash"}
+    - There's ash in the air
+- ELSEIF: {weather.weather=="Squall"}
+    - There's a squall
+- ELSEIF: {weather.weather=="Tornado"}
+    - There's a tornado happening
+- ELSE:
+    - {weather.weather}
+
+
