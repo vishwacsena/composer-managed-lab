@@ -58,9 +58,30 @@ Update the title of the trigger to `Weather` instead of `Handle an intent`
 
 Update the title of the trigger to `Cancel` instead of `Handle an intent`
 
+6. Given we are using LUIS which is a machine learning based intent classifier, we want to avoid low confidence results. To do this, 
+
+Set the `Condition` property to this 
+
+```
+#Cancel.Score >= 0.9
+```
+<center>
+<img src="./assets/07/luis-score.png" style="background-color:white" width = "400" />
+</center>
+
+> This says do not fire the cancel trigger if the confidence score returned by LUIS is lower than or equal to 0.9
+
 6. Click on `help` trigger in the left navigation and choose `Help` from the intent drop down
 
 Update the title of the trigger to `Help` instead of `Handle an intent`
+
+Set the `Condition` property to this 
+
+```
+#Help.Score >= 0.5
+```
+
+> This says do not fire the cancel trigger if the confidence score returned by LUIS is lower than or equal to 0.5
 
 7. Click on `Restart bot`
 

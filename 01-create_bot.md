@@ -102,6 +102,8 @@ Next, let's temporarily disable the recognizer for the main dialog. We will get 
 <img src="./assets/01/recognizer-none.png" style="background-color:white" width = "300" />
 </center>
 
+> Dialogs in Composer support 2 different recognizer types - LUIS, Regex. Unless you need intent classification or entity extraction, we can remove recognizer by setting it to `None`.
+
 # Start your bot and test it
 
 Now that our new bot has its first simple feature, let's launch it in the emulator and make sure everything works.

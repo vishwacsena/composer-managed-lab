@@ -49,6 +49,7 @@
         "id": "499733",
         "name": "Help"
       },
+      "condition": "#Help.Score > 0.5",
       "actions": [
         {
           "$type": "Microsoft.BeginDialog",
@@ -67,6 +68,7 @@
         "id": "360842",
         "name": "Cancel"
       },
+      "condition": "#Cancel.Score > 0.9",
       "actions": [
         {
           "$type": "Microsoft.BeginDialog",

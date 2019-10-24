@@ -162,7 +162,7 @@ Canceling!
 
 26. Use the `+` button again, this time choose `Dialogs >`, then `Cancel all dialogs`
 
-> When triggered, this will cause the bot to cancel any active dialogs, and send the user back to the main prompt.
+> When triggered, this will cause the bot to cancel any active dialogs, and send the user back to the main dialog.
 
 <center>
 <img src="./assets/04/cancel-flow.png" style="background-color:white" width = "400" />
