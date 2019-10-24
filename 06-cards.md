@@ -25,7 +25,7 @@ First, let's go ahead and update `prompt for zipcode` to include suggested actio
 ```
 [Activity
     Text = What is your zipcode?
-    SuggestedActions = Help | Cancel
+    SuggestedActions = help | cancel
 ]
 ```
 

@@ -15,7 +15,7 @@
 # bfdprompt-992072
 [Activity
     Text = What is your zipcode?
-    SuggestedActions = Help | Cancel
+    SuggestedActions = help | cancel
 ]
 
 
