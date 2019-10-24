@@ -1,0 +1,21 @@
+> See https://aka.ms/lu-file-format to learn about supported LU concepts.
+
+# Weather
+- get weather
+- weather
+- how is the weather
+
+# Help
+- help
+- i need help
+- please help
+- can you please help
+
+# Cancel
+- cancel
+- please cancel that
+- stop that
+
+> regex zipcode entity. Any time LUIS sees a five digit number, it will flag it as 'zipcode' entity. 
+
+$ zipcode : /[0-9]{5}/

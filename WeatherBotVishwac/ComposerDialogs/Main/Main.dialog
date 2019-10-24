@@ -5,23 +5,7 @@
   },
   "autoEndDialog": "true",
   "defaultResultProperty": "dialog.result",
-  "recognizer": {
-    "$type": "Microsoft.RegexRecognizer",
-    "intents": [
-      {
-        "intent": "weather",
-        "pattern": "weather"
-      },
-      {
-        "intent": "help",
-        "pattern": "help"
-      },
-      {
-        "intent": "cancel",
-        "pattern": "cancel"
-      }
-    ]
-  },
+  "recognizer": "Main.lu",
   "triggers": [
     {
       "$type": "Microsoft.OnConversationUpdateActivity",
@@ -44,9 +28,9 @@
     {
       "$type": "Microsoft.OnIntent",
       "$designer": {
-        "id": "858740"
+        "id": "858740",
+        "name": "Weather"
       },
-      "intent": "weather",
       "actions": [
         {
           "$type": "Microsoft.BeginDialog",
@@ -56,14 +40,15 @@
           },
           "dialog": "getWeather1"
         }
-      ]
+      ],
+      "intent": "Weather"
     },
     {
       "$type": "Microsoft.OnIntent",
       "$designer": {
-        "id": "499733"
+        "id": "499733",
+        "name": "Help"
       },
-      "intent": "help",
       "actions": [
         {
           "$type": "Microsoft.BeginDialog",
@@ -73,14 +58,15 @@
           },
           "dialog": "help"
         }
-      ]
+      ],
+      "intent": "Help"
     },
     {
       "$type": "Microsoft.OnIntent",
       "$designer": {
-        "id": "360842"
+        "id": "360842",
+        "name": "Cancel"
       },
-      "intent": "cancel",
       "actions": [
         {
           "$type": "Microsoft.BeginDialog",
@@ -90,7 +76,8 @@
           },
           "dialog": "cancel"
         }
-      ]
+      ],
+      "intent": "Cancel"
     }
   ],
   "$schema": "../../app.schema",

@@ -24,6 +24,15 @@
           "activity": "[bfdactivity-153145]"
         },
         {
+          "$type": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "998855",
+            "name": "Set a Property"
+          },
+          "property": "user.zipcode",
+          "value": "@zipcode"
+        },
+        {
           "$type": "Microsoft.TextInput",
           "$designer": {
             "id": "992072",
