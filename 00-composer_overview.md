@@ -6,7 +6,7 @@
 
 - Bot framework composer installed. Verify by launching Edge browser and navigate to `http://localhost:3000`
 - Bot Framework Emulator installed. Verify by launching Bot Framework Emulator.
-- Cognitive Service Language Understanding authoring resource. To verify, click on `Environment details` tab in the integrated documentation pane. You should see non empty values for `LUIS authoring key 1` and `LUIS authoring key 2`.
+- Cognitive Service Language Understanding authoring resource. To verify, click on Environment details tab in the integrated documentation pane. You should see non empty values for `LUIS authoring key 1` and `LUIS authoring key 2`..
 
 ## Bot Framework Composer
 
