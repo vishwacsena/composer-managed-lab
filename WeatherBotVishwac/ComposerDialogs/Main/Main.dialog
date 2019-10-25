@@ -68,7 +68,7 @@
         "id": "360842",
         "name": "Cancel"
       },
-      "condition": "#Cancel.Score > 0.9",
+      "condition": "#Cancel.Score > 0.8",
       "actions": [
         {
           "$type": "Microsoft.BeginDialog",

@@ -52,7 +52,7 @@ You will notice that the new bot is pre-configured with one trigger in the left 
 
 1. Click the `Handle ConversationUpdate` trigger in the left hand explorer.
 
-2. You will see a new `flow` has been added to the dialog. 
+2. You will see a new flow has been added to the dialog. 
 
 <img src="./assets/01/new-flow.png" style="background-color:white" width = "800" />
 

@@ -10,7 +10,7 @@ Let's go ahead and update our dialog's recognizers to use luis instead.
 
 <img src="./assets/07/luis-recognizer.png" style="background-color:white" width = "800" />
 
-2. To work with LUIS recognizer, you can provide content in the [.lu file foramt][2] that is highly similar to language generation format. 
+2. To work with LUIS recognizer, you can provide content in the [***.lu file foramt***][2] that is highly similar to language generation format. 
 
 With this, intents are denoted using the markdown section notation - e.g. `# intentName` and utterances are provided as a list. 
 
@@ -63,13 +63,13 @@ Update the title of the trigger to `Cancel` instead of `Handle an intent`
 Set the `Condition` property to this 
 
 ```
-#Cancel.Score >= 0.9
+#Cancel.Score >= 0.8
 ```
 <center>
 <img src="./assets/07/luis-score.png" style="background-color:white" width = "400" />
 </center>
 
-> This says do not fire the cancel trigger if the confidence score returned by LUIS is lower than or equal to 0.9
+> This says do not fire the cancel trigger if the confidence score returned by LUIS is lower than or equal to 0.8
 
 6. Click on `help` trigger in the left navigation and choose `Help` from the intent drop down
 

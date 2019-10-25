@@ -23,6 +23,10 @@ So, let's prompt the user for a zipcode.
 What is your zipcode?
 ```
 
+5. Set the `Default value` property (next to Max turn count) to `'98052'` (include the quotes). 
+
+> By default prompts are configured to ask the user for information `Max turn count` number of times (defaults to 3). When this happens, the prompt will stop and set the `Default value` to the `Property` and move forward with the conversaiton. 
+
 <center>
 <img src="./assets/03/zipcode-prompt.png" style="background-color:white" width = "400" />
 </center>
@@ -103,7 +107,7 @@ After this action occurs, the bot can use `{user.zipcode}` in messages, and more
 
 ## Add an HTTP request
 
-The http request action is found under the `Integrations >` menu in the flow "+" button.
+The http request action is found under the `Access external resources >` menu in the flow "+" button.
 
 11. Add an `Http Request` step to your flow.
 
@@ -142,7 +146,7 @@ After making an HTTP request, we need to test the status of the response. To do 
 dialog.api_response.statusCode == 200
 ```
 
-15. In the `true` branch, use the "+" button, then select `Memory manipulation >`, then `Set a Property`
+15. In the `true` branch, use the "+" button, then select `Manage properties >`, then `Set a Property`
 
       Set Property to:
       ```
@@ -156,7 +160,7 @@ dialog.api_response.statusCode == 200
 
 <img src="./assets/03/set-property-condition.png" style="background-color:white" width = "600" />
 
-16. Still in the `true` branch, use the "+" button, then select `Send Messages >`, then `Send an activity`
+16. Still in the `true` branch, use the "+" button, then select `Send Messages >`, then `Send a response`
 
     Set the text of the message to:
     ```

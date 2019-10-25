@@ -52,7 +52,7 @@ Composer created this new dialog with no triggers or actions defined. So let's g
 
 7. For now, we'll just add a simple message to get things hooked up, then we'll come back to flesh out the feature.
 
-   Click the "+" in the flow, and use the same `Send an Activity` action.  Set the text of the activity to:
+   Click the "+" in the flow, and use the same `Send a response` action.  Set the text of the activity to:
    
     ```
     Let's check the weather
