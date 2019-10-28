@@ -1,0 +1,20 @@
+{
+  "$type": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "name": "MyWeatherBot"
+  },
+  "autoEndDialog": "true",
+  "defaultResultProperty": "dialog.result",
+  "recognizer": "Main.lu",
+  "triggers": [
+    {
+      "$type": "Microsoft.OnConversationUpdateActivity",
+      "$designer": {
+        "id": "376720"
+      },
+      "condition": "toLower(turn.Activity.membersAdded[0].name) != 'bot'"
+    }
+  ],
+  "$schema": "../../app.schema",
+  "generator": "common.lg"
+}

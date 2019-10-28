@@ -6,7 +6,7 @@
 
 - Bot framework composer installed. Verify by launching Edge browser and navigate to `http://localhost:3000`
 - Bot Framework Emulator installed. Verify by launching Bot Framework Emulator.
-- Cognitive Service Language Understanding authoring resource. To verify, click on Environment details tab in the integrated documentation pane. You should see non empty values for `LUIS authoring key 1` and `LUIS authoring key 2`..
+- Cognitive Service Language Understanding authoring resource. To verify, click on Environment details tab in the integrated documentation pane. You should see non empty values for `LUIS authoring key 1` and `LUIS authoring key 2`.
 
 ## Bot Framework Composer
 
@@ -18,7 +18,7 @@ Bot Framework Composer is an integrated development tool for developers and mult
 - Integration with Language generation system​
 - A ready-to-use bot runtime executable​
 
-<img src="./assets/00/overview.png" style="background-color:white" width = "800" />
+![](./assets/00/overview.png)
 
 ​Bot Framework Composer is: 
 
@@ -26,8 +26,6 @@ Bot Framework Composer is an integrated development tool for developers and mult
 - Open source​
 - A web app designed to run locally and in cloud-environments ​
 - Designed as an extensible solution both at dialog composition (actions/ skills) and composer tools and workflows​
-
-<img src="./assets/00/overview2.png" style="background-color:white" width = "800" />
 
 ## Workshop outline
 
@@ -50,9 +48,6 @@ This workshop is structured to start simple and quickly layer in sophisticated c
 
 We will cover the following building blocks as we create a `Weather bot` using Bot Framework Composer.
 
-
-<img src="./assets/00/composer-building-blocks.png" style="background-color:white" width = "800" />
-
-
+![](./assets/00/composer-building-blocks.png)
 
 [1]:https://www.luis.ai/

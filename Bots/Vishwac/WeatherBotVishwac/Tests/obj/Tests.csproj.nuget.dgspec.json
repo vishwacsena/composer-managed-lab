@@ -1,0 +1,188 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/vishwacsenakannan/repos/composer-managed-lab/WeatherBotVishwac/Tests/Tests.csproj": {}
+  },
+  "projects": {
+    "/Users/vishwacsenakannan/repos/composer-managed-lab/WeatherBotVishwac/BotProject.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/vishwacsenakannan/repos/composer-managed-lab/WeatherBotVishwac/BotProject.csproj",
+        "projectName": "BotProject",
+        "projectPath": "/Users/vishwacsenakannan/repos/composer-managed-lab/WeatherBotVishwac/BotProject.csproj",
+        "packagesPath": "/Users/vishwacsenakannan/.nuget/packages/",
+        "outputPath": "/Users/vishwacsenakannan/repos/composer-managed-lab/WeatherBotVishwac/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/vishwacsenakannan/repos/composer-managed-lab/WeatherBotVishwac/NuGet.Config",
+          "/Users/vishwacsenakannan/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://botbuilder.myget.org/F/botbuilder-v4-dotnet-daily/api/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
+            "Microsoft.AspNetCore.All": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "Microsoft.Bot.Builder": {
+              "target": "Package",
+              "version": "[4.6.0-preview-191021-2, )"
+            },
+            "Microsoft.Bot.Builder.ApplicationInsights": {
+              "target": "Package",
+              "version": "[4.6.0-preview-191021-2, )"
+            },
+            "Microsoft.Bot.Builder.Azure": {
+              "target": "Package",
+              "version": "[4.6.0-preview-191021-2, )"
+            },
+            "Microsoft.Bot.Builder.Dialogs": {
+              "target": "Package",
+              "version": "[4.6.0-preview-191021-2, )"
+            },
+            "Microsoft.Bot.Builder.Dialogs.Adaptive": {
+              "target": "Package",
+              "version": "[4.6.0-preview-191021-2, )"
+            },
+            "Microsoft.Bot.Builder.Dialogs.Debugging": {
+              "target": "Package",
+              "version": "[4.6.0-preview-191021-2, )"
+            },
+            "Microsoft.Bot.Builder.Dialogs.Declarative": {
+              "target": "Package",
+              "version": "[4.6.0-preview-191021-2, )"
+            },
+            "Microsoft.Bot.Builder.Integration.ApplicationInsights.Core": {
+              "target": "Package",
+              "version": "[4.6.0-preview-191021-2, )"
+            },
+            "Microsoft.Bot.Builder.Integration.AspNet.Core": {
+              "target": "Package",
+              "version": "[4.6.0-preview-191021-2, )"
+            },
+            "Microsoft.Bot.Connector": {
+              "target": "Package",
+              "version": "[4.6.0-preview-191021-2, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/vishwacsenakannan/repos/composer-managed-lab/WeatherBotVishwac/Tests/Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/vishwacsenakannan/repos/composer-managed-lab/WeatherBotVishwac/Tests/Tests.csproj",
+        "projectName": "Tests",
+        "projectPath": "/Users/vishwacsenakannan/repos/composer-managed-lab/WeatherBotVishwac/Tests/Tests.csproj",
+        "packagesPath": "/Users/vishwacsenakannan/.nuget/packages/",
+        "outputPath": "/Users/vishwacsenakannan/repos/composer-managed-lab/WeatherBotVishwac/Tests/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/vishwacsenakannan/repos/composer-managed-lab/WeatherBotVishwac/NuGet.Config",
+          "/Users/vishwacsenakannan/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://botbuilder.myget.org/F/botbuilder-v4-dotnet-daily/api/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "/Users/vishwacsenakannan/repos/composer-managed-lab/WeatherBotVishwac/BotProject.csproj": {
+                "projectPath": "/Users/vishwacsenakannan/repos/composer-managed-lab/WeatherBotVishwac/BotProject.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.0.1, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
