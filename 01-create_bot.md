@@ -16,7 +16,7 @@ new folder on your computer with all the files necessary to build, test and run 
      
    and give it a description:
    
-      `A friendly bot that can get you weather information.`
+      `A friendly bot who can talk about the weather.`
 
    > Make sure not to put any spaces or special characters in the bot's name.
 
