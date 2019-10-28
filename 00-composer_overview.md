@@ -34,10 +34,6 @@ This workshop is structured to start simple and quickly layer in sophisticated c
 
 - Create a new Bot
 - Author a new dialog
-    - Triggers - Language Understanding (powered by [LUIS.ai][1])
-    - Actions
-- Using different actions to model conversation flow
-    - HTTP Action
 - Add global help, cancel handling
 - Use language generation to power your bot's responses
 - Building and responding with adaptive cards

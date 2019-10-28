@@ -12,11 +12,11 @@ new folder on your computer with all the files necessary to build, test and run 
 
 2. The second screen asks for a `Name` and `Description` of your bot. Let's call it:
 
-      weatherBot
+      `WeatherBot`
      
    and give it a description:
    
-      a friendly bot who can talk about the weather.
+      `A friendly bot that can get you weather information.`
 
    > Make sure not to put any spaces or special characters in the bot's name.
 
@@ -50,7 +50,7 @@ You will notice that the new bot is pre-configured with one trigger in the left 
 
 3. To help keep the bot organized, let's rename this trigger to something that describes what it does. In the `property editor` on the right side of the screen, click on the name of the trigger ("Handle ConversationUpdate"). You'll be able to update the title there, and the change will be instantly reflected in the dialog and navigation on the left. Rename ths trigger to:
 
-      WelcomeTheUser
+      `WelcomeTheUser`
 
 ![](./assets/01/rename-trigger.gif)
 
@@ -69,9 +69,7 @@ For now, let's instruct the bot to send a simple greeting.
 
 6. Type a welcome message into this field. It is always a good idea to have your bot introduce itself and explain it's main features.  So let's make the welcome message something like:
 
-      Hi! I'm a friendly bot that can help with the weather. Try saying WEATHER or FORECAST.
-
-
+      `Hi! I'm a friendly bot that can help with the weather. Try saying WEATHER or FORECAST.`
 
 Your bot should now look like this:
 
@@ -83,9 +81,9 @@ Next, let's temporarily disable the recognizer for the main dialog. We will get 
 
 6. In the property editor on the right hand side, click on `Recognizer type` and select `None`.
 
-   ![](./assets/01/recognizer-none.png)
-
    > Dialogs in Composer support 2 different recognizer types - LUIS, Regex. Unless you need intent classification or entity extraction, we can remove recognizer by setting it to `None`.
+   
+   ![](./assets/01/recognizer-none.png)
 
 ## Start your bot and test it
 
