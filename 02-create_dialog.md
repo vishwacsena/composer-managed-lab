@@ -89,7 +89,7 @@ You can break pieces of your conversation flow into `dialogs` and can chain them
 
 7. Click `Submit` and a second trigger, along with _a new flow_ will appear in the main dialog.
 
-8. Click the "+" in the flow and select the `Dialogs >` option. From the submenu, select `Begin a Dialog`
+8. Click the "+" in the flow and select the `Dialogs management > ` option. From the submenu, select `Begin a new dialog`
 
 9. In the property editor for the new action, set the `dialog` property to  our `getWeather` dialog.
 

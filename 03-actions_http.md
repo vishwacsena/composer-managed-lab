@@ -1,9 +1,9 @@
 # Get the Weather
 
 1. In the explorer, click on `getWeather` to select the dialog and reveal the triggers it contains.
-2. Click on the `BeginDialog` trigger underneath getWeather. The first thing we need to do to check a user's local weather is collect the user's location. Our weather API accepts a 5 digit zipcode as a parameter. So, let's add a `TextInput` to prompt the user for a `zipcode`.
+2. Click on the `BeginDialog` trigger underneath getWeather. The first thing we need to do to check a user's local weather is collect the user's location. Our weather API accepts a 5 digit zipcode as a parameter. So, let's add a `Text Input` to prompt the user for a `zipcode`.
 3. Click the "+" button in the flow and select `Ask a Question >`. You'll see a variety of options for asking for different types of input.
-4. Select `Prompt for text` from the sub-menu. 2 new nodes will appear in the flow!
+4. Select `Text Input` from the sub-menu. 2 new nodes will appear in the flow!
 
    > You use prompts to collect information from user. Prompt are broken down into a few pieces. We'll configure each separately.
 
@@ -83,7 +83,7 @@
 
 The http request action is found under the `Access external resources >` menu in the flow "+" button.
 
-1. Add an `Http Request` step to your flow.
+1. Select `Send an HTTP request` to add a the step to your flow.
 
    ![](./assets/03/http-step.png)
 
@@ -108,7 +108,7 @@ The http request action is found under the `Access external resources >` menu in
 
    After making an HTTP request, we need to test the status of the response. To do this, we'll use an If/Else branch.
 
-3. Use the '+' button, then choose `Flow`, then choose  `Branch: If/Else`
+3. Use the '+' button, then choose `Create a condition`, then choose  `Branch: If/Else`
 
 4. In the property editor on the right, set the `condition` field to:
 
@@ -126,7 +126,7 @@ The http request action is found under the `Access external resources >` menu in
 
    ![](./assets/03/set-property-condition.png)
 
-6. Still in the `true` branch, use the "+" button, then select `Send Messages >`, then `Send a response`
+6. Still in the `true` branch, use the "+" button, then select `Send a response`
 
    Set the text of the message to:
    
@@ -134,13 +134,13 @@ The http request action is found under the `Access external resources >` menu in
 
    ![](./assets/03/ifelse.png)
 
-7. Now, in the `false` branch, use the "+" button, then select `Send Messages >`, then `Send an activity`
+7. Now, in the `false` branch, use the "+" button, then select `Send a response`
 
    Set the text of the message to:
    
       `I got an error: {dialog.api_response.content.message}`
 
-8. To be safe, let's clean up the invalid value which otherwise would persist. Use the "+", select `Memory Manipulation >`, then select `Delete a property`
+8. To be safe, let's clean up the invalid value which otherwise would persist. Use the "+", select `Manage properties >`, then select `Delete a property`
 
    Set the property to:
 

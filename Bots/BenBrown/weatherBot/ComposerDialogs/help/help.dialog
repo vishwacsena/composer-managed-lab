@@ -5,7 +5,7 @@
     "description": "global help",
     "id": "850205"
   },
-  "events": [
+  "triggers": [
     {
       "$type": "Microsoft.OnBeginDialog",
       "$designer": {

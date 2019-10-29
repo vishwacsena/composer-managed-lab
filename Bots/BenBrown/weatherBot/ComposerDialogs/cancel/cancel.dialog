@@ -4,7 +4,7 @@
     "name": "cancel",
     "id": "929960"
   },
-  "events": [
+  "triggers": [
     {
       "$type": "Microsoft.OnBeginDialog",
       "$designer": {

@@ -61,11 +61,11 @@ The "+" button can be used to add `Actions` to the conversation flow. You can us
 
 For now, let's instruct the bot to send a simple greeting.
 
-4. Click the "+" button and select the first menu item `Send Messages`, and then selec the first item from the sub-menu: `Send an Activity`
+4. Click the "+" button and select the first menu item `Send a response`.
 
    ![](./assets/01/add-send-activity.gif)
 
-5. Select the new `Send an Activity` action in the flow and it's properties will appear on the right hand side of the screen.  This action has only one main property - the text of the activity to send.
+5. Select the new `Send a response` action in the flow and it's properties will appear on the right hand side of the screen.  This action has only one main property - the text of the activity to send.
 
 6. Type a welcome message into this field. It is always a good idea to have your bot introduce itself and explain it's main features.  So let's make the welcome message something like:
 

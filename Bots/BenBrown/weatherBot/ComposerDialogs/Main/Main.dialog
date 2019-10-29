@@ -24,7 +24,7 @@
     ]
   },
   "generator": "common.lg",
-  "events": [
+  "triggers": [
     {
       "$type": "Microsoft.OnConversationUpdateActivity",
       "$designer": {

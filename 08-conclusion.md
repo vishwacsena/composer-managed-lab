@@ -2,9 +2,7 @@
 
 That's the end of this work shop. 
 
-<center>
-<img src="./assets/congratulations.jpg" style="background-color:white" height = "100"/>
-</center>
+![](./assets/congratulations.jpg)
 
 
 You are now off to a great start building amazing conversational applications (bots) with Bot Framework Composer. 
