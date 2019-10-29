@@ -44,7 +44,7 @@
       `- Sorry, '{this.value}' is not valid. I'm looking for a 5 digit number as zipcode. Please specify a zipcode in the form 12345`
 
 11. In `Validation Rules`, type:
-      
+
     > validation rule 1 says we need a five characters
 
       `length(this.value) == 5`
