@@ -103,9 +103,9 @@ For now, let's add one more global function - a cancel command.
 
       `cancel`
 
-> Do you remember how to add a `BeginDialog` trigger to this newly created dialog? 
+   > Do you remember how to add a `BeginDialog` trigger to this newly created dialog? 
 
-You will need to add a `BeginDialog` trigger to this newly created dialog. See [here](#create-begin-dialog-trigger) to juggle your memory and add a `BeginDialog` trigger to this dialog and continue through the next set of steps.
+   You will need to add a `BeginDialog` trigger to this newly created dialog. See [here](#create-begin-dialog-trigger) to juggle your memory and add a `BeginDialog` trigger to this dialog and continue through the next set of steps.
 
 24. Use the `+` button at the bottom of the flow, choose `Send a response`
 25. In the property editor on the right side, set the text of the activity to:
