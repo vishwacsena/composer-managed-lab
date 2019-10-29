@@ -101,7 +101,6 @@ The http request action is found under the `Access external resources >` menu in
 
    ![](./assets/03/http-props.png)
 
-
    This will cause the bot to make an HTTP request to the url specified. The reference to `{user.zipcode}` will be replaced by a live value from the bot's memory.
 
    > HTTP action sets the following information in the `Result property`: statusCode, reasonPhrase, content, headers. Setting the `Result property` to `dialog.api_response` means we can access those values via `dialog.api_response.statusCode`, `dialog.api_response.reasonPhrase`, `dialog.api_response.content` and `dialog.api_response.headers`. If the response is json, it will be a deserialized object available via `dialog.api_response.content`.
@@ -109,7 +108,6 @@ The http request action is found under the `Access external resources >` menu in
    After making an HTTP request, we need to test the status of the response. To do this, we'll use an If/Else branch.
 
 3. Use the '+' button, then choose `Create a condition`, then choose  `Branch: If/Else`
-
 4. In the property editor on the right, set the `condition` field to:
 
       `dialog.api_response.statusCode == 200`
