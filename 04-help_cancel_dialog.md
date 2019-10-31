@@ -13,20 +13,10 @@ With even a simple bot, it is a good practice to provide a help command. You'll 
 
    <a name="create-begin-dialog-trigger"></a>
 
-   Composer created this new dialog with no triggers or actions defined. So let's go ahead and add a trigger for actions to execute when this dialog begins. 
-4. Click on `+ New Trigger` in the left navigation pane. 
-5. Select `Handle a Dialog Event` for `What is the type of this trigger?` and select `Handle and event: BeginDialog` for `What is the event?`. Click `Submit` 
+   Composer created this new dialog with one `BeginDialog` trigger pre-configured. 
 
-   > `BeginDialog` event is automatically fired by adaptive dialog when this dialog is invoked.
-
-   ![](./assets/02/begin-dialog-trigger.png)
-
-6. Let's give this trigger a shorter name - type `BeginDialog` in the right property editor. 
-
-   ![](./assets/02/begindialog-trigger.png) 
-
-7. Use the `+` button at the bottom of the flow, choose `Send a response`
-8. In the property editor on the right side, set the text of the activity to:
+4. With the `BeginDialog` trigger selected, use the `+` button at the bottom of the flow, choose `Send a response`
+5. In the property editor on the right side, set the text of the activity to:
 
       `I am a weather bot! I can tell you the current weather conditions. Just say WEATHER.`
 
@@ -34,9 +24,9 @@ With even a simple bot, it is a good practice to provide a help command. You'll 
 
    Next, let's wire this new dialog up to the Main dialog (your bot's brain).
 
-9. In the left hand explorer, click on `weatherBot.Main` at the top of the list.
-10. In the right hand property pane, find the "Language Understanding" section and click the "Add" button at the bottom. This will reveal 2 new fields, allowing you to define a new intent.
-11. Set the `Intent` field to:
+6. In the left hand explorer, click on `weatherBot.Main` at the top of the list.
+7. In the right hand property pane, find the "Language Understanding" section and click the "Add" button at the bottom. This will reveal 2 new fields, allowing you to define a new intent.
+8. Set the `Intent` field to:
 
       `help`
 
@@ -46,21 +36,21 @@ With even a simple bot, it is a good practice to provide a help command. You'll 
 
       ![](./assets/04/help-intent.png)
 
-12. In the left hand explorer, click `+ New Trigger'
-13. In the resulting dialog box, select `Handle an Intent`, then choose the new `help` intent. Submit the dialog.
+9. In the left hand explorer, click `+ New Trigger'
+10. In the resulting dialog box, select `Handle an Intent`, then choose the new `help` intent. Submit the dialog.
 
      ![](./assets/04/new-trigger.png) 
 
-14. In the flow editor, click the `+` button at the bottom of the empty flow.
-15. Choose `Dialogs management >` and then select `Begin a new dialog`
+11. In the flow editor, click the `+` button at the bottom of the empty flow.
+12. Choose `Dialogs management >` and then select `Begin a new dialog`
 
       ![](./assets/04/help-trigger-flow.png)
 
-16. In the right hand property editor, select the `help` dialog.
+13. In the right hand property editor, select the `help` dialog.
 
       ![](./assets/04/help-props.png)
 
-17. Click `Reload bot` and open it in the emulator.
+14. Click `Reload bot` and open it in the emulator.
 
 ----
 
@@ -75,14 +65,14 @@ However, notice that once you start the weather dialog by saying weather, your b
 
 ## Allowing interruptions
 
-18. In Composer's left hand explorer, navigate back to the `getWeather` dialog. Make sure to highlight the `BeginDialog` trigger.
-19. Select the `Bot Asks` node in the flow that says `What is your zipcode?`
-20. In the right hand property editor, set `Allow Interruptions` to `true`
+1. In Composer's left hand explorer, navigate back to the `getWeather` dialog. Make sure to highlight the `BeginDialog` trigger.
+2. Select the `Bot Asks` node in the flow that says `What is your zipcode?`
+3. In the right hand property editor, set `Allow Interruptions` to `true`
    ![](./assets/04/interrupts.png)
 
    > This tells Bot Framework to consult the parent dialog's recognizer, which will allow the bot to respond to `help` at the prompt as well.
 
-21. Hit `Reload Bot` and open it in the emulator.
+4. Hit `Reload Bot` and open it in the emulator.
 
 ---
 
@@ -98,45 +88,41 @@ For now, let's add one more global function - a cancel command.
 
 ## Global cancel
 
-22. In Composer's left hand explorer, click the `+ New Dialog` button again. 
-23. Give this new dialog the name:
+1. In Composer's left hand explorer, click the `+ New Dialog` button again. 
+2. Give this new dialog the name:
 
       `cancel`
 
-   > Do you remember how to add a `BeginDialog` trigger to this newly created dialog? 
-
-   You will need to add a `BeginDialog` trigger to this newly created dialog. See [here](#create-begin-dialog-trigger) to juggle your memory and add a `BeginDialog` trigger to this dialog and continue through the next set of steps.
-
-24. Use the `+` button at the bottom of the flow, choose `Send a response`
-25. In the property editor on the right side, set the text of the activity to:
+3. Use the `+` button at the bottom of the flow, choose `Send a response`
+4. In the property editor on the right side, set the text of the activity to:
 
       `Canceling!`
 
-26. Use the `+` button again, this time choose `Dialog management >`, then `Cancel all dialogs`
+5. Use the `+` button again, this time choose `Dialog management >`, then `Cancel all dialogs`
 
       > When triggered, this will cause the bot to cancel any active dialogs, and send the user back to the main dialog.
 
       ![](./assets/04/cancel-flow.png) 
 
-27. In the left hand explorer, click on `weatherBot.Main` at the top of the list.
-28. In the right hand property pane, find the "Language Understanding" section and click the "Add" button at the bottom. This will reveal 2 new fields, allowing you to define a new intent.
-29. Set the `Intent` field to:
+6. In the left hand explorer, click on `weatherBot.Main` at the top of the list.
+7. In the right hand property pane, find the "Language Understanding" section and click the "Add" button at the bottom. This will reveal 2 new fields, allowing you to define a new intent.
+8. Set the `Intent` field to:
 
       `cancel`
 
-30. Set the `Pattern` field to:
+9. Set the `Pattern` field to:
 
       `cancel`
 
-31. In the left hand explorer, click `+ New Trigger'
-32. In the resulting dialog box, select `Handle an Intent`, then choose the new `cancel` intent. Submit the dialog.
-33. In the flow editor, click the `+` button at the bottom of the empty flow.
-34. Choose `Dialog management >` and then select `Begin a new dialog`
-35. In the right hand property editor, select the `cancel` dialog.
+10. In the left hand explorer, click `+ New Trigger'
+11. In the resulting dialog box, select `Handle an Intent`, then choose the new `cancel` intent. Submit the dialog.
+12. In the flow editor, click the `+` button at the bottom of the empty flow.
+13. Choose `Dialog management >` and then select `Begin a new dialog`
+14. In the right hand property editor, select the `cancel` dialog.
 
       ![](./assets/04/cancel-trigger.png) 
 
-36. Click `Reload bot` and open it in the emulator.
+15. Click `Reload bot` and open it in the emulator.
 
 ---
 

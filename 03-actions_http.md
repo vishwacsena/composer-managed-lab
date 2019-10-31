@@ -1,7 +1,7 @@
 # Get the Weather
 
 1. In the explorer, click on `getWeather` to select the dialog and reveal the triggers it contains.
-2. Click on the `BeginDialog` trigger underneath getWeather. The first thing we need to do to check a user's local weather is collect the user's location. Our weather API accepts a 5 digit zipcode as a parameter. So, let's add a `Text Input` to prompt the user for a `zipcode`.
+2. Click on the `BeginDialog` trigger underneath getWeather. The first thing we need to do to check a user's local weather is collect the user's location. Our weather API accepts a 5 digit zipcode as a parameter. So, let's add a `Number Input` to prompt the user for a `zipcode`.
 3. Click the "+" button in the flow and select `Ask a Question >`. You'll see a variety of options for asking for different types of input.
 4. Select `Text Input` from the sub-menu. 2 new nodes will appear in the flow!
 
@@ -48,14 +48,6 @@
     > validation rule 1 says we need a five characters
 
       `length(this.value) == 5`
-
-    and then press enter.
-
-    > validation rule 2 says we need a number
-
-    Then, type: 
-
-      `int(this.value) != null`
 
     and then press enter.
 
