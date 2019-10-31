@@ -34,9 +34,6 @@ After creating your bot, Composer will load the new bot's `Main` dialog in the e
 
 Each dialog contains one or more `Triggers` that define the actions available to the bot while the dialog is active. Right now the dialog is empty, so the bot won't do anything.
 
-As a refresher, here are the constituent parts of a dialog - 
-
-![](./assets/01/adaptive-dialog-anatomy.png)
 
 You will notice that the new bot is pre-configured with one trigger in the left dialogs window - `Handle ConversationUpdate`. 
 
