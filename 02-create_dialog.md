@@ -31,24 +31,11 @@ First, we'll set up all the components and make sure they work together. Then, w
 
    ![](./assets/02/create-getweather.png)
 
-Composer created this new dialog with no triggers or actions defined. So let's go ahead and add a trigger for actions to execute when this dialog begins. 
+Composer created this new dialog with a trigger already defined - `BeginDialog`. This trigger will is associated with a special event that fires immediately whenever a dialog begins. We can use this to make our dialog do stuff immediately, without waiting for further input.
 
-4. Click on `+ New Trigger` in the left navigation pane. 
+4. Make sure to select `BeginDialog` in the left hand nav.
 
-5. Select 
-   - `Handle a Dialog Event` for `What is the type of this trigger?` 
-   - `Handle and event: BeginDialog` for `What is the event?`. 
-   - Click `Submit` 
-
-   > `BeginDialog` event is automatically fired by adaptive dialog when this dialog is invoked.
-
-   ![](./assets/02/begin-dialog-trigger.png)
-
-6. Let's give this trigger a shorter name - type `BeginDialog` in the right property editor. 
-
-   ![](./assets/02/begindialog-trigger.png)
-
-7. For now, we'll just add a simple message to get things hooked up, then we'll come back to flesh out the feature. Click the "+" in the flow, and use the same `Send a response` action.  Set the text of the activity to:
+5. For now, we'll just add a simple message to get things hooked up, then we'll come back to flesh out the feature. Click the "+" in the flow, and use the same `Send a response` action.  Set the text of the activity to:
    
       `Let's check the weather`
 

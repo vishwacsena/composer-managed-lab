@@ -69,13 +69,13 @@ For now, let's instruct the bot to send a simple greeting.
 
 6. Type a welcome message into this field. It is always a good idea to have your bot introduce itself and explain it's main features.  So let's make the welcome message something like:
 
-      `Hi! I'm a friendly bot that can help with the weather. Try saying WEATHER or FORECAST.`
+      `Hi! I'm a friendly bot that can help with the weather. Try saying WEATHER.`
 
 Your bot should now look like this:
 
    ![](./assets/01/send-activity.png)
 
-Next, let's temporarily disable the recognizer for the main dialog. We will get back to this in the next step.
+Next, let's temporarily disable the recognizer for the main dialog. We will come back to this in the next step.
 
 7. Click on `WeatherBot.Main` in the left pane to bring up the properties editor for the root dialog.
 
