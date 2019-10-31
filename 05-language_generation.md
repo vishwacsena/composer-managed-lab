@@ -4,6 +4,10 @@ Now that the bot can perform its basic tasks, it's time to work on the conversat
 
 Composer includes the Bot Framework Language Generation library, a set of powerful templating and message formatting tools that make it easy to include variation, conditional messages, and dynamic content that puts you control of how your bot responds to the user!
 
+---
+merge variations and conditions
+
+
 Let's start by adding some variation to the welcome message.
 
 1. In Composer, click on `weatherBot.Main`, then make sure to highlight the `WelcomeTheUser` trigger.
@@ -36,7 +40,7 @@ Click the `Restart conversation` link in Emulator's top bar. You might see anoth
 
 Currently, the bot reports the weather in a very robotic manner: The weather is Clouds and it is 75&deg;.
 
-Let's make improve the language used when delivering the weather conditions. To do this, we'll use 2 features of the language generation system: conditional messages, and parameterized messages.
+Let's improve the language used when delivering the weather conditions. To do this, we'll use 2 features of the language generation system: conditional messages, and parameterized messages.
 
 5. Navigate to the `Bot Says` tab by clicking the bot icon on the far left of the screen.
 

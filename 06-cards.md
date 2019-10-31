@@ -43,7 +43,7 @@ Next up, let's change the weather report to also include a card.
     ```
     [ThumbnailCard
         title = Weather for @{dialog.weather.city}
-        text = The weather is {dialog.weather.weather} and @{dialog.weather.temp}&deg;
+        text = {DescribeWeather(dialog.weather)} and @{dialog.weather.temp}&deg;
         image = @{dialog.weather.icon}
     ]
     ```

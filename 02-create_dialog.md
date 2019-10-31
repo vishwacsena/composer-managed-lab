@@ -78,7 +78,9 @@ You can break pieces of your conversation flow into `dialogs` and can chain them
 
 8. Click the "+" in the flow and select the `Dialogs management > ` option. From the submenu, select `Begin a new dialog`
 
-9. In the property editor for the new action, set the `dialog` property to  our `getWeather` dialog.
+9. In the property editor for the new action, set the `dialog name` property to  our `getWeather` dialog.
+
+10. Add "unhandled intent" trigger
 
 ## Let's test it out.
 

@@ -46,13 +46,13 @@ You will notice that the new bot is pre-configured with one trigger in the left 
 
 2. You will see a new flow has been added to the dialog. 
 
-![](./assets/01/new-flow.png)
+   ![](./assets/01/new-flow.png)
 
 3. To help keep the bot organized, let's rename this trigger to something that describes what it does. In the `property editor` on the right side of the screen, click on the name of the trigger ("Handle ConversationUpdate"). You'll be able to update the title there, and the change will be instantly reflected in the dialog and navigation on the left. Rename ths trigger to:
 
       `WelcomeTheUser`
 
-![](./assets/01/rename-trigger.gif)
+   ![](./assets/01/rename-trigger.gif)
 
 Now, let's actually make the bot do something! 
 Inside the flow, you'll see that the teal `Trigger` box has a line below it that includes in a "+" button.

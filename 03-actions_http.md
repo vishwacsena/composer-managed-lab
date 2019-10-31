@@ -27,39 +27,27 @@
 
       `user.zipcode`
 
-   For `Output Format`, select `trim`. This ensures leading and trailing spaces in user input are trimmed before the value is assigned to `user.zipcode`
-
    ![](./assets/03/zipcode-answer.png)
 
 9. Click on the `Exceptions` tab in the property editor. This section allows you to specify validation rules for the prompt, as well as error messages that will be used if the user provides an invalid response.
 
    ![](./assets/03/tab-exceptions.png)
 
-10. In the `Unrecognized Prompt` field, enter:
-      
-      `- Sorry, I do not understand '{this.value}'. Please specify a zipcode in the form 12345`
 
-    In the `Invalid Prompt` field, also enter:
+10. In `Validation Rules`, type:
 
-      `- Sorry, '{this.value}' is not valid. I'm looking for a 5 digit number as zipcode. Please specify a zipcode in the form 12345`
-
-11. In `Validation Rules`, type:
-      
-    > validation rule 1 says we need a five characters
 
       `length(this.value) == 5`
 
     and then press enter.
 
-    > validation rule 2 says we need a number
-
-    Then, type: 
-
-      `int(this.value) != null`
-
-    and then press enter.
+    > This validation rule says the input must contain five characters
 
     > Make sure to press enter to add the rule!
+
+11. In the `Invalid Prompt` field, also enter:
+
+      `- Sorry, '{this.value}' is not valid. I'm looking for a 5 digit number as zipcode. Please specify a zipcode in the form 12345`
 
     Your properties pane should look like this:
 
@@ -78,6 +66,16 @@
     > By default, prompts will be skip if the bound property already has a value. Always prompt, when enabled, will cause the prompt to appear even if the value is already known. Leave this unchecked for now.
 
     After this action occurs, the bot can use `{user.zipcode}` in messages, and more importantly, in calls to external APIs!
+
+
+add a step to output "Let's get teh weather for zipcode"
+
+test in emulator
+
+NEXT CHAPTER
+
+---- 
+
 
 ## Add an HTTP request
 
@@ -101,7 +99,6 @@ The http request action is found under the `Access external resources >` menu in
 
    ![](./assets/03/http-props.png)
 
-
    This will cause the bot to make an HTTP request to the url specified. The reference to `{user.zipcode}` will be replaced by a live value from the bot's memory.
 
    > HTTP action sets the following information in the `Result property`: statusCode, reasonPhrase, content, headers. Setting the `Result property` to `dialog.api_response` means we can access those values via `dialog.api_response.statusCode`, `dialog.api_response.reasonPhrase`, `dialog.api_response.content` and `dialog.api_response.headers`. If the response is json, it will be a deserialized object available via `dialog.api_response.content`.
@@ -109,7 +106,6 @@ The http request action is found under the `Access external resources >` menu in
    After making an HTTP request, we need to test the status of the response. To do this, we'll use an If/Else branch.
 
 3. Use the '+' button, then choose `Create a condition`, then choose  `Branch: If/Else`
-
 4. In the property editor on the right, set the `condition` field to:
 
       `dialog.api_response.statusCode == 200`
