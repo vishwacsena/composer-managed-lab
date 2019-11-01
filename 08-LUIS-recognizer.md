@@ -10,7 +10,7 @@ Let's go ahead and update our dialog's recognizers to use luis instead.
 
    ![](./assets/07/luis-recognizer.png)
 
-2. To work with LUIS recognizer, you can provide content in the [***.lu file foramt***][2] that is highly similar to language generation format. 
+2. To work with LUIS recognizer, you can provide content in the [***.lu file format***][2] that is highly similar to language generation format. 
 
    With this, intents are denoted using the markdown section notation - e.g. `# intentName` and utterances are provided as a list. 
 
@@ -39,22 +39,28 @@ Let's go ahead and update our dialog's recognizers to use luis instead.
    - cancel
    - please cancel that
    - stop that
+
+    > regex zipcode entity. Any time LUIS sees a five digit number, it will flag it as 'zipcode' entity. 
+
+    $ zipcode : /[0-9]{5}/
    ```
 
    ![](./assets/07/luis-with-lu-content.png)
 
-3. Once you have done this, you need to re-configure the various `Handle an intent` triggers within that dialog. 
-4. Click on `weather` trigger in the left navigation and choose `Weather` from the intent drop down
+## Update triggers
+
+1. Once you have done this, you need to re-configure the various `Handle an intent` triggers within that dialog. 
+2. Click on `weather` trigger in the left navigation and choose `Weather` from the intent drop down
 
    Update the title of the trigger to `Weather` instead of `Handle an intent`
 
    ![](./assets/07/weather-intent-selection.png)
 
-5. Click on `cancel` trigger in the left navigation and choose `Cancel` from the intent drop down
+3. Click on `cancel` trigger in the left navigation and choose `Cancel` from the intent drop down
 
    Update the title of the trigger to `Cancel` instead of `Handle an intent`
 
-6. Given we are using LUIS which is a machine learning based intent classifier, we want to avoid low confidence results. To do this, 
+4. Given we are using LUIS which is a machine learning based intent classifier, we want to avoid low confidence results. To do this, 
 
    Set the `Condition` property to this 
 
@@ -64,7 +70,7 @@ Let's go ahead and update our dialog's recognizers to use luis instead.
 
    > This says do not fire the cancel trigger if the confidence score returned by LUIS is lower than or equal to 0.8
 
-7. Click on `help` trigger in the left navigation and choose `Help` from the intent drop down
+5. Click on `help` trigger in the left navigation and choose `Help` from the intent drop down
 
    Update the title of the trigger to `Help` instead of `Handle an intent`
 
@@ -74,7 +80,7 @@ Let's go ahead and update our dialog's recognizers to use luis instead.
 
    > This says do not fire the cancel trigger if the confidence score returned by LUIS is lower than or equal to 0.5
 
-7. Click on `Restart bot`
+6. Click on `Restart bot`
 
    Composer has now detected that you have LU information specified and it needs to create/ update corresponding LUIS applications. 
 
@@ -82,11 +88,9 @@ Let's go ahead and update our dialog's recognizers to use luis instead.
 
    ![](./assets/07/luis-key.png)
 
-8. Click `Publish`. This should take a minute or two to complete. Composer will render progress at the top right corner of the screen.
+7. Click `Publish`. This should take a minute or two to complete. Composer will render progress at the top right corner of the screen.
 
-<TBD> Need gif that shows LUIS publish animation.
-
-9. Click on `Test in Emulator` and talk to the bot. 
+8. Click on `Test in Emulator` and talk to the bot. 
 
 ---
 
@@ -95,7 +99,6 @@ With LUIS, you no longer have to type in exact regex patterns to trigger specifi
 * "How is the weather"
 * "Weather please"
 * "Cancel everything"
-* "Not sure what I can do" 
 
 ![](./assets/07/luis-wired-up.png)
 
@@ -106,18 +109,6 @@ With LUIS, you no longer have to type in exact regex patterns to trigger specifi
 You can use LUIS to recognize entities from what the user says. 
 
 As an example, the user could say "How is the weather in 98052?" and instead of prompting the user again for a zipcode, we could just go straight to pulling up weather information if the user had already provided that as part of their initial query. 
-
-Let's get this wired up. 
-
-10. Step one is to add a regex entity extractor to the LUIS app. To do this, click on `WeatherBot.Main` and on the right side, **add** the following entity definition at the end of the LU content - 
-
-    ```
-    > regex zipcode entity. Any time LUIS sees a five digit number, it will flag it as 'zipcode' entity. 
-
-    $ zipcode : /[0-9]{5}/
-    ```
-
-    ![](./assets/07/zipcode-regex-entity.png)
 
 11. Next, let's configure your `prompt for zipcode` to use the entity if LUIS finds it. To do this, open `getWeather` dialog from the left navigtation menu, select `BeginDialog` trigger and scroll to and find the prompt.
 

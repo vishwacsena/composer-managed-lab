@@ -31,9 +31,11 @@ First, we'll set up all the components and make sure they work together. Then, w
 
    ![](./assets/02/create-getweather.png)
 
-Composer created this new dialog with a `BeginDialog` trigger pre-configured.
+Composer created this new dialog with a trigger already defined - `BeginDialog`. This trigger will is associated with a special event that fires immediately whenever a dialog begins. We can use this to make our dialog do stuff immediately, without waiting for further input.
 
-3. For now, we'll just add a simple message to get things hooked up, then we'll come back to flesh out the feature. With `BeginDialog` trigger selected, click the "+" in the flow, and use the same `Send a response` action.  Set the text of the activity to:
+4. Make sure to select `BeginDialog` in the left hand nav.
+
+5. For now, we'll just add a simple message to get things hooked up, then we'll come back to flesh out the feature. Click the "+" in the flow, and use the same `Send a response` action.  Set the text of the activity to:
    
       `Let's check the weather`
 
@@ -72,11 +74,27 @@ You can break pieces of your conversation flow into `dialogs` and can chain them
 
    ![](./assets/02/weather-trigger.gif)
 
-7. Click `Submit` and a second trigger, along with _a new flow_ will appear in the main dialog.
+7. Click `Submit` and a second trigger, along with _a new flow_ will appear in the main window.
 
 8. Click the "+" in the flow and select the `Dialogs management > ` option. From the submenu, select `Begin a new dialog`
 
 9. In the property editor for the new action, set the `dialog name` property to  our `getWeather` dialog.
+
+## Create a Fallback 
+
+Your bot can now handle requests for the weather. But what if a user sends an off topic message or requests something else? The bot should at least send a useful response. 
+
+To do this, we can use an "Unknown Intent" trigger that will fire whenever a message isn't handled by another trigger.
+
+1. Click on "+ New Trigger" in the left hand side under the `weatherBot.Main` header. The trigger modal will appear.  
+
+2. Select `Handle Unknown Intent` from the first dropdown.  Click `Next`
+
+3. You'll see a new flow in the main window. Click the "+" button, and select `Send a response`
+
+4. Set the message text to:
+
+      `What’s that? Right now, I only know how to check the weather.`
 
 ## Let's test it out.
 
