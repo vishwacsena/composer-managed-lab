@@ -13,27 +13,25 @@
 
       `What is your zipcode?`
 
-6. Set the `Default value` property (next to Max turn count) to `'98052'` (include the quotes). 
-
    > By default prompts are configured to ask the user for information `Max turn count` number of times (defaults to 3). When this happens, the prompt will stop and set the `Default value` to the `Property` and move forward with the conversaiton. 
 
    ![](./assets/03/zipcode-prompt.png)
 
-7. Next, click the `User Answers` tab in the property editor. This part of the prompt represents the user's response, including where to store the value and how to pre-process it.
+6. Next, click the `User Answers` tab in the property editor. This part of the prompt represents the user's response, including where to store the value and how to pre-process it.
 
    ![](./assets/03/prompt-tabs.png)
 
-8. Here, we can specify what property in memory will be used to store the user's response. In `Property to fill`, enter the value:
+7. Here, we can specify what property in memory will be used to store the user's response. In `Property to fill`, enter the value:
 
       `user.zipcode`
 
    ![](./assets/03/zipcode-answer.png)
 
-9. Click on the `Exceptions` tab in the property editor. This section allows you to specify validation rules for the prompt, as well as error messages that will be used if the user provides an invalid response.
+8. Click on the `Exceptions` tab in the property editor. This section allows you to specify validation rules for the prompt, as well as error messages that will be used if the user provides an invalid response.
 
    ![](./assets/03/tab-exceptions.png)
 
-10. In `Validation Rules`, type:
+9. In `Validation Rules`, type:
 
       `length(this.value) == 5`
 
@@ -43,7 +41,7 @@
 
     > Make sure to press enter to add the rule!
 
-11. In the `Invalid Prompt` field, also enter:
+10. In the `Invalid Prompt` field, also enter:
 
       `- Sorry, '{this.value}' is not valid. I'm looking for a 5 digit number as zipcode. Please specify a zipcode in the form 12345`
 
@@ -65,9 +63,9 @@
 
     After this action occurs, the bot can use `{user.zipcode}` in messages, and more importantly, in calls to external APIs!
 
-12. Finally, add a `Send a response` action to the bottom of the flow to echo back the zipcode to the user.
+11. Finally, add a `Send a response` action to the bottom of the flow to echo back the zipcode to the user.
 
-13. Set the text action of this action to:
+12. Set the text action of this action to:
 
       `Let's get the weather for {user.zipcode}`
 
