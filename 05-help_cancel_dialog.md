@@ -2,40 +2,11 @@
 
 With even a simple bot, it is a good practice to provide a help command. You'll also want to provide a way for users to back out. 
 
-* do not create child dialogs
-* create both intents at once 
-* create triggers with actions in main dialog
-* turn on interruptions
-* test
-
 --
 
-
-1. Click `+ New Dialog` in the left hand explorer. You'll see a popup window.
-2. Give this new dialog the name:
-
-      `help`
-
-   ![](./assets/04/help-dialog.png)
-
-3. Click submit, and you'll land in the editor view for the new help dialog. 
-
-   <a name="create-begin-dialog-trigger"></a>
-
-   Composer created this new dialog with one `BeginDialog` trigger pre-configured. 
-
-4. With the `BeginDialog` trigger selected, use the `+` button at the bottom of the flow, choose `Send a response`
-5. In the property editor on the right side, set the text of the activity to:
-
-      `I am a weather bot! I can tell you the current weather conditions. Just say WEATHER.`
-
-   ![](./assets/04/help.png)
-
-   Next, let's wire this new dialog up to the Main dialog (your bot's brain).
-
-6. In the left hand explorer, click on `weatherBot.Main` at the top of the list.
-7. In the right hand property pane, find the "Language Understanding" section and click the "Add" button at the bottom. This will reveal 2 new fields, allowing you to define a new intent.
-8. Set the `Intent` field to:
+1. In the left hand explorer, click on `weatherBot.Main` at the top of the list.
+2. In the right hand property pane, find the "Language Understanding" section and click the "Add" button at the bottom. This will reveal 2 new fields, allowing you to define a new intent.
+3. Set the `Intent` field to:
 
       `help`
 
@@ -45,30 +16,39 @@ With even a simple bot, it is a good practice to provide a help command. You'll 
 
       ![](./assets/04/help-intent.png)
 
-9. In the left hand explorer, click `+ New Trigger'
-10. In the resulting dialog box, select `Handle an Intent`, then choose the new `help` intent. Submit the dialog.
+4. Click the "Add" button again.
+5. Set the `Intent` field to:
+
+      `cancel`
+      
+      Set the `Pattern` field to:
+
+      `cancel`
+
+6. In the left hand explorer, click `+ New Trigger'
+7. In the resulting dialog box, select `Handle an Intent`, then choose the new `help` intent. Submit the dialog.
 
      ![](./assets/04/new-trigger.png) 
 
-11. In the flow editor, click the `+` button at the bottom of the empty flow.
-12. Choose `Dialogs management >` and then select `Begin a new dialog`
+3. Use the `+` button at the bottom of the flow, choose `Send a response`
+4. In the property editor on the right side, set the text of the activity to:
 
-      ![](./assets/04/help-trigger-flow.png)
+      `I am a weather bot! I can tell you the current weather conditions. Just say WEATHER.`
 
-13. In the right hand property editor, select the `help` dialog.
+   ![](./assets/04/help.png)
 
-      ![](./assets/04/help-props.png)
+5. In the left hand explorer, click `+ New Trigger'
+6. In the resulting dialog box, select `Handle an Intent`, then choose the new `cancel` intent. Submit the dialog.
+7. Use the `+` button at the bottom of the flow, choose `Send a response`
+8. In the property editor on the right side, set the text of the activity to:
 
-14. Click `Reload bot` and open it in the emulator.
+      `Canceling!`
 
-----
+5. Use the `+` button again, this time choose `Dialog management >`, then `Cancel all dialogs`
 
-Now, in addition to giving you the current weather, your bot can also offer help.
+      > When triggered, this will cause the bot to cancel any active dialogs, and send the user back to the main dialog.
 
-![](./assets/04/basic-help.gif)
-
-However, notice that once you start the weather dialog by saying weather, your bot doesn't know how to provide help. Let's fix this!
-
+      ![](./assets/04/cancel-flow.png) 
 
 ---
 
@@ -87,59 +67,11 @@ However, notice that once you start the weather dialog by saying weather, your b
 
 Say `weather` to your bot.  It will ask for a zipcode.
 
-Now say `help`. It'll provide the global help response, even though that intent and trigger are defined in another dialog. Interruptions are a powerful way to make complex bots - we'll come back to that later.
-
-![](./assets/04/better-help.gif)
-
-For now, let's add one more global function - a cancel command.
-
----
-
-## Global cancel
-
-1. In Composer's left hand explorer, click the `+ New Dialog` button again. 
-2. Give this new dialog the name:
-
-      `cancel`
-
-3. Use the `+` button at the bottom of the flow, choose `Send a response`
-4. In the property editor on the right side, set the text of the activity to:
-
-      `Canceling!`
-
-5. Use the `+` button again, this time choose `Dialog management >`, then `Cancel all dialogs`
-
-      > When triggered, this will cause the bot to cancel any active dialogs, and send the user back to the main dialog.
-
-      ![](./assets/04/cancel-flow.png) 
-
-6. In the left hand explorer, click on `weatherBot.Main` at the top of the list.
-7. In the right hand property pane, find the "Language Understanding" section and click the "Add" button at the bottom. This will reveal 2 new fields, allowing you to define a new intent.
-8. Set the `Intent` field to:
-
-      `cancel`
-
-9. Set the `Pattern` field to:
-
-      `cancel`
-
-10. In the left hand explorer, click `+ New Trigger'
-11. In the resulting dialog box, select `Handle an Intent`, then choose the new `cancel` intent. Submit the dialog.
-12. In the flow editor, click the `+` button at the bottom of the empty flow.
-13. Choose `Dialog management >` and then select `Begin a new dialog`
-14. In the right hand property editor, select the `cancel` dialog.
-
-      ![](./assets/04/cancel-trigger.png) 
-
-15. Click `Reload bot` and open it in the emulator.
-
----
-
-Say `weather` to your bot.  It will ask for a zipcode.
-
-Now say `help`. It'll provide the global help respons.
+Now say `help`. It'll provide the global help response, even though that intent and trigger are defined in another dialog. 
 
 Now, say `cancel` - notice, the bot doesn't resume the weather dialog. Instead, it confirms the cancelation, and waits for your next message.
+
+![](./assets/04/better-help.gif)
 
 
 ## Covered in this section
