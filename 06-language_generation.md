@@ -4,66 +4,40 @@ Now that the bot can perform its basic tasks, it's time to work on the conversat
 
 Composer includes the Bot Framework Language Generation library, a set of powerful templating and message formatting tools that make it easy to include variation, conditional messages, and dynamic content that puts you control of how your bot responds to the user!
 
----
-merge variations and conditions
-
-
-Let's start by adding some variation to the welcome message.
-
-1. In Composer, click on `weatherBot.Main`, then make sure to highlight the `WelcomeTheUser` trigger.
-
-   ![](./assets/05/nav1.png) 
-
-2. Select the `Send a response` node in the flow.
-
-   ![](./assets/05/lg-1.png)
-
-3. In the right hand property editor, replace the text with the following:
-
-    ```
-    -Hi! I'm a friendly bot that can help with the weather. Try saying WEATHER.
-    -Hello! I am Weather Bot! Say WEATHER to get the current conditions.
-    -Howdy! Weather bot is my name and weather is my game.
-    ```
-
-    > Each tick mark indicates a variation in the message. The bot will choose one of the responses randomly at runtime!
-
-4. Click `Reload Bot` and open it in the emulator.
-
----
-
-You'll see the bot greet you with one of the three variants we listed. 
-
-Click the `Restart conversation` link in Emulator's top bar. You might see another variant! If you see the same response, click `Restart conversation` again! 
-
----
-
 Currently, the bot reports the weather in a very robotic manner: The weather is Clouds and it is 75&deg;.
 
 Let's improve the language used when delivering the weather conditions. To do this, we'll use 2 features of the language generation system: conditional messages, and parameterized messages.
 
-5. Navigate to the `Bot Says` tab by clicking the bot icon on the far left of the screen.
+1. Navigate to the `Bot Says` tab by clicking the bot icon on the far left of the screen.
 
    ![](./assets/05/botsays.png)
 
-6. Toggle the `Edit Mode` switch in the upper right hand corner so that it turns blue.  This will enable a syntax-highlighted LG editor in the main pane.
+2. Toggle the `Edit Mode` switch in the upper right hand corner so that it turns blue.  This will enable a syntax-highlighted LG editor in the main pane.
 
    > You'll notice that every message you created in the flow editor also appears here. They're linked, and any changes you make in this view will be reflected in the flow as well.
 
    ![](./assets/05/editmode.png) 
 
-7. Scroll to the bottom of the editor.
-8. Paste the following text:
+3. Scroll to the bottom of the editor.
+4. Paste the following text:
     ```
     # DescribeWeather(weather)
     - IF: {weather.weather=="Clouds"}
         - It is cloudy
+        - There are clouds in the sky
+        - The sun is hiding behind the clouds
     - ELSEIF: {weather.weather=="Thunderstorm"}
         - There's a thunderstorm
+        - It is thundering
+        - There's thunder and lightning
     - ELSEIF: {weather.weather=="Drizzle"}
         - It is drizzling
+        - It is raining a little bit
+        - It is damp
     - ELSEIF: {weather.weather=="Rain"}
         - It is raining
+        - It is pouring rain
+        - There is water falling from the sky
     - ELSEIF: {weather.weather=="Snow"}
         - There's snow
     - ELSEIF: {weather.weather=="Clear"}
