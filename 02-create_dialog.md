@@ -106,6 +106,8 @@ To do this, we can use an "Unknown Intent" trigger that will fire whenever a mes
 
    ![](./assets/02/emulator-weather-draft.png)
 
+3. Try something that the bot will not recognize - e.g. `Hello`. The bot should respond with the message for the `unknown intent` trigger.
+
 ## Covered in this section
 
 - Created a sub-dialog that will contain our current weather feature
