@@ -41,6 +41,12 @@
 
     > Make sure to press enter to add the rule!
 
+      `int(this.value) != null`
+
+    and then press enter.
+
+    > This validation rule says the input must be a number.
+
 10. In the `Invalid Prompt` field, also enter:
 
       `- Sorry, '{this.value}' is not valid. I'm looking for a 5 digit number as zipcode. Please specify a zipcode in the form 12345`
@@ -81,4 +87,6 @@
 
 ## Covered in this section
 
+- Adding an input action.
+- Configuring the input action with validation constraints.
 - Prompting user for information
